@@ -10,4 +10,4 @@ movie-kg/
 ├─ docs/                结构说明、测试记录、汇报素材
 ├─ slides/              项目和论文PPT
 ├─ requirements.txt     项目依赖
-└─ README.md            你负责：项目介绍和启动说明
+└─ README.md            郑蕾负责：项目介绍和启动说明
