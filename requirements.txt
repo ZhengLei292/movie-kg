@@ -1,4 +1,7 @@
-数据集来源：MovieLens Latest Small 
-Python
-Streamlit
-图谱使用neo4j
+streamlit==1.64.0
+neo4j==6.3.1
+fastapi==0.142.2
+uvicorn==0.54.0
+requests==2.34.2
+truststore==0.10.4
+

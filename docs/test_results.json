@@ -1,0 +1,333 @@
+{
+  "timestamp": "2026-10-02T16:00:12.505403",
+  "status": "PASS",
+  "checks": [
+    "all_movie_ids_match_raw_csv",
+    "all_9742_movies_title_genre_tag_relations_match_raw_csv",
+    "audit_movie_3528",
+    "audit_movie_3072",
+    "audit_movie_133802",
+    "audit_movie_40959",
+    "audit_movie_56788",
+    "audit_movie_31590",
+    "audit_movie_2069",
+    "audit_movie_102716",
+    "audit_movie_8410",
+    "audit_movie_6581",
+    "audit_movie_92535",
+    "audit_movie_6400",
+    "audit_movie_258",
+    "audit_movie_79091",
+    "audit_movie_4638",
+    "audit_movie_6998",
+    "audit_movie_45208",
+    "audit_movie_112552",
+    "audit_movie_1863",
+    "audit_movie_109968",
+    "recommendation_ranking_and_evidence_1",
+    "recommendation_ranking_and_evidence_2571",
+    "recommendation_ranking_and_evidence_260",
+    "recommendation_ranking_and_evidence_3528",
+    "recommendation_ranking_and_evidence_3072",
+    "recommendation_ranking_and_evidence_133802",
+    "recommendation_ranking_and_evidence_40959",
+    "recommendation_ranking_and_evidence_56788",
+    "recommendation_ranking_and_evidence_31590",
+    "recommendation_ranking_and_evidence_2069",
+    "recommendation_ranking_and_evidence_102716",
+    "recommendation_ranking_and_evidence_8410",
+    "recommendation_ranking_and_evidence_6581",
+    "recommendation_ranking_and_evidence_92535",
+    "recommendation_ranking_and_evidence_6400",
+    "recommendation_ranking_and_evidence_258",
+    "recommendation_ranking_and_evidence_79091",
+    "recommendation_ranking_and_evidence_4638",
+    "recommendation_ranking_and_evidence_6998",
+    "recommendation_ranking_and_evidence_45208",
+    "recommendation_ranking_and_evidence_112552",
+    "recommendation_ranking_and_evidence_1863",
+    "recommendation_ranking_and_evidence_109968",
+    "no_tags_uses_genres_only",
+    "no_features_returns_empty",
+    "duplicate_title_preserves_ids_[838, 26958]",
+    "duplicate_title_preserves_ids_[2851, 168358]",
+    "duplicate_title_preserves_ids_[6003, 144606]",
+    "duplicate_title_preserves_ids_[32600, 147002]",
+    "duplicate_title_preserves_ids_[34048, 64997]",
+    "case_insensitive_partial_search",
+    "no_search_results",
+    "injection_is_literal_text",
+    "invalid_movie_404",
+    "limit_validation_422",
+    "invalid_feature_kind_422",
+    "negative_offset_422",
+    "search_pagination_no_overlap",
+    "graph_neighbor_limit",
+    "every_displayed_edge_exists_in_raw",
+    "feature_click_returns_real_neighbors",
+    "tag_neighbors_pixar",
+    "tag_neighbors_fun",
+    "repeated_import_is_idempotent"
+  ],
+  "count": 66,
+  "auditedAllMovies": 9742,
+  "sampleSeed": 20261002,
+  "sample": [
+    {
+      "movieId": 3528,
+      "title": "Prince of Tides, The (1991)",
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "tags": [
+        "psychiatrist"
+      ],
+      "result": "PASS"
+    },
+    {
+      "movieId": 3072,
+      "title": "Moonstruck (1987)",
+      "genres": [
+        "Comedy",
+        "Romance"
+      ],
+      "tags": [
+        "new york"
+      ],
+      "result": "PASS"
+    },
+    {
+      "movieId": 133802,
+      "title": "Slow West (2015)",
+      "genres": [
+        "Action",
+        "Thriller",
+        "Western"
+      ],
+      "tags": [],
+      "result": "PASS"
+    },
+    {
+      "movieId": 40959,
+      "title": "Ice Harvest, The (2005)",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Crime",
+        "Thriller"
+      ],
+      "tags": [],
+      "result": "PASS"
+    },
+    {
+      "movieId": 56788,
+      "title": "Charlie Wilson's War (2007)",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "War"
+      ],
+      "tags": [],
+      "result": "PASS"
+    },
+    {
+      "movieId": 31590,
+      "title": "Hands Off the Loot (Touchez pas au grisbi) (1954)",
+      "genres": [
+        "Crime",
+        "Drama",
+        "Thriller"
+      ],
+      "tags": [],
+      "result": "PASS"
+    },
+    {
+      "movieId": 2069,
+      "title": "Trip to Bountiful, The (1985)",
+      "genres": [
+        "Drama"
+      ],
+      "tags": [],
+      "result": "PASS"
+    },
+    {
+      "movieId": 102716,
+      "title": "Fast & Furious 6 (Fast and the Furious 6, The) (2013)",
+      "genres": [
+        "Action",
+        "Crime",
+        "IMAX",
+        "Thriller"
+      ],
+      "tags": [],
+      "result": "PASS"
+    },
+    {
+      "movieId": 8410,
+      "title": "Suddenly (1954)",
+      "genres": [
+        "Crime",
+        "Drama",
+        "Film-Noir"
+      ],
+      "tags": [],
+      "result": "PASS"
+    },
+    {
+      "movieId": 6581,
+      "title": "Private Life of Sherlock Holmes, The (1970)",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Mystery"
+      ],
+      "tags": [],
+      "result": "PASS"
+    },
+    {
+      "movieId": 92535,
+      "title": "Louis C.K.: Live at the Beacon Theater (2011)",
+      "genres": [
+        "Comedy"
+      ],
+      "tags": [],
+      "result": "PASS"
+    },
+    {
+      "movieId": 6400,
+      "title": "Murder on a Sunday Morning (Un coupable idéal) (2001)",
+      "genres": [
+        "Documentary"
+      ],
+      "tags": [
+        "crime",
+        "documentary"
+      ],
+      "result": "PASS"
+    },
+    {
+      "movieId": 258,
+      "title": "Kid in King Arthur's Court, A (1995)",
+      "genres": [
+        "Adventure",
+        "Children",
+        "Comedy",
+        "Fantasy",
+        "Romance"
+      ],
+      "tags": [],
+      "result": "PASS"
+    },
+    {
+      "movieId": 79091,
+      "title": "Despicable Me (2010)",
+      "genres": [
+        "Animation",
+        "Children",
+        "Comedy",
+        "Crime"
+      ],
+      "tags": [],
+      "result": "PASS"
+    },
+    {
+      "movieId": 4638,
+      "title": "Jurassic Park III (2001)",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Sci-Fi",
+        "Thriller"
+      ],
+      "tags": [
+        "dinosaurs"
+      ],
+      "result": "PASS"
+    },
+    {
+      "movieId": 6998,
+      "title": "House of Cards (1993)",
+      "genres": [
+        "Drama"
+      ],
+      "tags": [],
+      "result": "PASS"
+    },
+    {
+      "movieId": 45208,
+      "title": "RV (2006)",
+      "genres": [
+        "Adventure",
+        "Children",
+        "Comedy"
+      ],
+      "tags": [],
+      "result": "PASS"
+    },
+    {
+      "movieId": 112552,
+      "title": "Whiplash (2014)",
+      "genres": [
+        "Drama"
+      ],
+      "tags": [
+        "inspirational",
+        "inspiring",
+        "intense",
+        "jazz",
+        "music",
+        "passion",
+        "psychological",
+        "suspense",
+        "tense"
+      ],
+      "result": "PASS"
+    },
+    {
+      "movieId": 1863,
+      "title": "Major League: Back to the Minors (1998)",
+      "genres": [
+        "Comedy"
+      ],
+      "tags": [],
+      "result": "PASS"
+    },
+    {
+      "movieId": 109968,
+      "title": "Why Don't You Play In Hell? (Jigoku de naze warui) (2013)",
+      "genres": [
+        "Action",
+        "Drama"
+      ],
+      "tags": [],
+      "result": "PASS"
+    }
+  ],
+  "noTagsExample": 4,
+  "noFeaturesExample": 114335,
+  "duplicateTitles": {
+    "Emma (1996)": [
+      838,
+      26958
+    ],
+    "Saturn 3 (1980)": [
+      2851,
+      168358
+    ],
+    "Confessions of a Dangerous Mind (2002)": [
+      6003,
+      144606
+    ],
+    "Eros (2004)": [
+      32600,
+      147002
+    ],
+    "War of the Worlds (2005)": [
+      34048,
+      64997
+    ]
+  },
+  "recommendationCases": 23,
+  "durationSeconds": 5.59
+}

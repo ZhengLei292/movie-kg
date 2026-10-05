@@ -1,0 +1,222 @@
+{
+  ".gitignore": {
+    "bytes": 50,
+    "sha256": "868fecd3a3c9468f032933aba794319049518c9bbc30c6ec1b5057392e3e18ed"
+  },
+  ".streamlit/config.toml": {
+    "bytes": 251,
+    "sha256": "cf2dde3266a7e114f4521a7f1a1aed206a7f6e83cd6cebe349e63846b3b5201d"
+  },
+  "backend/__init__.py": {
+    "bytes": 1,
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+  },
+  "backend/app.py": {
+    "bytes": 2297,
+    "sha256": "4465d3de044b0b5c694381c57460de1dc039cc21e7a4550a025f9852da7f8fe6"
+  },
+  "backend/graph.py": {
+    "bytes": 6135,
+    "sha256": "839debf4a3c2faa508b1bf1cc86fa9ce29c93efffe6af2ca3856cffb0e8b9503"
+  },
+  "backend/settings.py": {
+    "bytes": 404,
+    "sha256": "e4621776554949f3bb849aca9a6c4fa033b5e592a682b995a274b15f3f322966"
+  },
+  "data/processed/movie_genres.csv": {
+    "bytes": 308291,
+    "sha256": "a72961251d5d2d95df2858b469fdb211efcf0874a9a77758dd00073d8edaa160"
+  },
+  "data/processed/movie_tags.csv": {
+    "bytes": 61948,
+    "sha256": "aeb8e93bdc73e5eeeada39d40d4938f456dfded187ce71612900757479b9cd31"
+  },
+  "data/processed/movies.csv": {
+    "bytes": 378457,
+    "sha256": "c4cb658b5928d3f7d7ec970c9ead6825aca1c9da8fc23d372f98864c67d2dada"
+  },
+  "data/processed/movies.json": {
+    "bytes": 2007014,
+    "sha256": "1ba6acd59dd3745a2c41baa9f866f07b63a518f2123d7c036b2eb8c239c877f0"
+  },
+  "data/processed/stats.json": {
+    "bytes": 460,
+    "sha256": "54e08746bd04a7cebf562b5860045ecab3c84a2d8c532d2055e58c92e3b39ab5"
+  },
+  "data/raw/ml-latest-small.zip": {
+    "bytes": 978202,
+    "sha256": "696d65a3dfceac7c45750ad32df2c259311949efec81f0f144fdfb91ebc9e436"
+  },
+  "data/raw/movies.csv": {
+    "bytes": 494431,
+    "sha256": "5a5f32dd9bb3797b8e728a1b98958789d2b13f294a69fdfbc5727f8a9611aa07"
+  },
+  "data/raw/README.txt": {
+    "bytes": 8342,
+    "sha256": "63d22ac138e80fae37021797ed8e1b9424b5239dc576a137422adf783ae3f404"
+  },
+  "data/raw/tags.csv": {
+    "bytes": 118660,
+    "sha256": "92a9f8bb7916dceef6151209845788c3643f794dfa79d1feaec7121b5960399d"
+  },
+  "deliverables/01-home.png": {
+    "bytes": 236752,
+    "sha256": "19b1ed551a2db54987af3256d8db2316e81a7b45e187cfcf353f0bc56424ef13"
+  },
+  "deliverables/02-graph-click.png": {
+    "bytes": 237346,
+    "sha256": "f307d92d81ac2967297bbe3350d245b975ddba828a7776213de5865925eea6a6"
+  },
+  "deliverables/03-recommendation.png": {
+    "bytes": 246103,
+    "sha256": "e1c0e0505fca5f9646e3c7b116466f377a9add71d4af7f93de0aaf7fc6973427"
+  },
+  "deliverables/04-search.png": {
+    "bytes": 233901,
+    "sha256": "c71262aa88537fde8464cac067c6cdab689ea4ce4220417d994bbc08baa48d78"
+  },
+  "deliverables/05-stats.png": {
+    "bytes": 184212,
+    "sha256": "44cd2861b09cd8de59fb468bf9976afe12f421b93f1606cf733a72f9161ab435"
+  },
+  "deliverables/06-graph-and-reasons.png": {
+    "bytes": 246432,
+    "sha256": "bb9a4c773f9f414e044617d7868d998b9d937fbde76df694411c56803b83144e"
+  },
+  "deliverables/TransE论文分享.pptx": {
+    "bytes": 35305,
+    "sha256": "94ef1b92d82cd88845ae01f0190c0c09777ba88898d8c7adc8ba468f0f68d0da"
+  },
+  "deliverables/系统演示.mp4": {
+    "bytes": 3606758,
+    "sha256": "7e68ee9078210ab4379b5f8c5daa3374dd776066f6ef0bbee49c724f08bb30c5"
+  },
+  "deliverables/项目汇报.pptx": {
+    "bytes": 510828,
+    "sha256": "768e0999a80767cf59882ef0ce3becae391e8df7588deea65eaa7730fe69886a"
+  },
+  "docs/browser_results.json": {
+    "bytes": 234,
+    "sha256": "80a189848fa31292bec95e2f989ed2523d76a17fc6830f2dadbf3ab363234be5"
+  },
+  "docs/demo_checks.json": {
+    "bytes": 338,
+    "sha256": "b4a3869623791218e3adccd6dc125c86d096a345d7a3035f6d5263d70177fff6"
+  },
+  "docs/queries.cypher": {
+    "bytes": 1214,
+    "sha256": "d3429b8586bace6974834ed88aa44041a63e27290d2ffce99d48eaca896eaf28"
+  },
+  "docs/test_results.json": {
+    "bytes": 7751,
+    "sha256": "c5eb4faa0fd7d62fd7c848f7143f2b828db34f7f01550f57642570006715e928"
+  },
+  "docs/TransE-2013.pdf": {
+    "bytes": 424115,
+    "sha256": "3af5701eaeebd70d2fbc0c98031fb17fda2b2987162953bba4c49aafe7af19a4"
+  },
+  "docs/交付清单.md": {
+    "bytes": 2547,
+    "sha256": "c8e288561d94a5a50df07bf5da92b81f921e869814b81960bd71b20dfba6b08d"
+  },
+  "docs/原分工与任务详情.md": {
+    "bytes": 4561,
+    "sha256": "cd81dbd5d2ae2acc0d3356c3512da12f1a21e4b39497126d768182d270c23d13"
+  },
+  "docs/原始任务.pdf": {
+    "bytes": 231173,
+    "sha256": "ca7905a785a0de8a8a92111f022c40b7c0088c853e0800f7713498933840354f"
+  },
+  "docs/数据说明.md": {
+    "bytes": 2612,
+    "sha256": "644da8cb8bb60c2c0cf3ef70e6ce11d6c475da2db23dd700f9859f78993ae5a2"
+  },
+  "docs/架构与接口.md": {
+    "bytes": 2950,
+    "sha256": "d29f952589d076649cf95dafbdb783f0d52a86eaa91309bd8d0daed02947203d"
+  },
+  "docs/测试记录.md": {
+    "bytes": 5003,
+    "sha256": "65921b6168bbac886178f1512c2ca3d854392603f028f90d68c3ed10c1af5590"
+  },
+  "docs/论文讲稿与问答.md": {
+    "bytes": 5560,
+    "sha256": "2bc42cc4a731afad84df9bdc4cf2c025215cbd2c39655059d30c681fd06c1d89"
+  },
+  "docs/项目演示讲稿.md": {
+    "bytes": 2932,
+    "sha256": "7753ed2697990ed1e5c9eb871d10ce9d18012ee9a6f6f61969b1cf9787b366ea"
+  },
+  "frontend/app.py": {
+    "bytes": 11145,
+    "sha256": "bb18cd5247692f141c78e465921af2d024fb77782d066f82b6e79f7341b84809"
+  },
+  "frontend/graph_component/index.html": {
+    "bytes": 4808,
+    "sha256": "0290dba452fe7697aeefa605031726fdce00f4fe4fe39d88dff20090cf9ccb86"
+  },
+  "README.md": {
+    "bytes": 4918,
+    "sha256": "bcb2e107c02e053ad676aff38ea0fa0fec37cb14dc44991ab9e90768a410243a"
+  },
+  "rebuild.bat": {
+    "bytes": 117,
+    "sha256": "eb8593dd094c7d3be13dfed08eaaf5cc203861b84f140f8b7e3d0127221d08d8"
+  },
+  "requirements-dev.txt": {
+    "bytes": 107,
+    "sha256": "3965e58e143474ea42aedd6a256a32c1eae29cef30f3dadc313029ed9a08bc6d"
+  },
+  "requirements.txt": {
+    "bytes": 101,
+    "sha256": "539635c05eb9e4cca9527c88b14adc894dc508cb76aae9a00315e28fc0d4707f"
+  },
+  "scripts/__init__.py": {
+    "bytes": 1,
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+  },
+  "scripts/browser_check.py": {
+    "bytes": 3088,
+    "sha256": "a5dc19a74b2e730c1e7c1094c84068b16347da4430994941f37a9795b0d17bf5"
+  },
+  "scripts/import_graph.py": {
+    "bytes": 2246,
+    "sha256": "0f245fbff328aa9778cf0eae1cb68f2f8fa62290cf534c124feb540ae3e1cdeb"
+  },
+  "scripts/manage.py": {
+    "bytes": 7096,
+    "sha256": "d6f5383d14b918977747eb2c17fa6e3d1a55d494d527f0c99e17603b19046a3e"
+  },
+  "scripts/package_project.py": {
+    "bytes": 1799,
+    "sha256": "b5b64495df2dc1053a2049c1e493edd7954fc45d71b8083f044de45376b92257"
+  },
+  "scripts/prepare_data.py": {
+    "bytes": 4107,
+    "sha256": "8df78426cea216abd25a5ad27d361efcb3f772a004d56dc7e4096fc8f40de91d"
+  },
+  "scripts/record_demo.py": {
+    "bytes": 6151,
+    "sha256": "670d80bfa32468ffaeebf371e0103e56866482e7f0d25e51b54a739266f5cad2"
+  },
+  "scripts/test_system.py": {
+    "bytes": 7048,
+    "sha256": "8731655d232123cd28e805a22359c0d4815924abeb3ffb4ae0b961806bd97f47"
+  },
+  "start.bat": {
+    "bytes": 396,
+    "sha256": "f0dc6d91b7178d5c81dc78863e745f6a071a6c27bf9fd48cc0f35cfa52ad891c"
+  },
+  "stop.bat": {
+    "bytes": 98,
+    "sha256": "f2339a1296b02c23c0473a471abcb4be360586cf3b171df5738d74d67e5c053a"
+  },
+  "test.bat": {
+    "bytes": 98,
+    "sha256": "6b67967cdac2fa28c7e4d8f0e5bbfb96c925c818040782ca2cb4d668a3918b7c"
+  },
+  "打开系统.url": {
+    "bytes": 47,
+    "sha256": "cbe1c94acdc0033fd65b17892ac3edb4a60a71c6be4586eb5557af92ef35cadd"
+  }
+}

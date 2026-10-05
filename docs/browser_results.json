@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "pageErrors": [],
+  "checks": [
+    "home renders",
+    "graph genre click",
+    "recommendation navigation",
+    "empty search",
+    "search query",
+    "stats tab"
+  ],
+  "viewport": "1600x1050"
+}
