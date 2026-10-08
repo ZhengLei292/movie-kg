@@ -146,6 +146,14 @@ def start(rebuild=False,no_browser=False):
     with urllib.request.urlopen('http://127.0.0.1:18080/health',timeout=10) as r:
         if json.load(r).get('database')!='Neo4j':
             raise RuntimeError('Port 18080 is occupied by a different application')
+    with urllib.request.urlopen('http://127.0.0.1:18080/openapi.json',timeout=10) as r:
+        version=json.load(r).get('info',{}).get('version')
+    with urllib.request.urlopen('http://127.0.0.1:18080/api/stats',timeout=10) as r:
+        stats=json.load(r)
+    if version!='2.0.0' or not {'users','ratingRelations','relations','dataset'} <= stats.keys():
+        raise RuntimeError('Port 18080 is serving an old MovieGraph API. Run stop.bat in the old project, then restart this project.')
+    if stats['dataset']!=expected:
+        raise RuntimeError('API dataset does not match this project. Stop the other project before restarting.')
     if not open_port(18501):
         p=spawn('frontend',[sys.executable,'-m','streamlit','run','frontend/app.py'])
         wait_port(18501,p,30)
@@ -158,19 +166,30 @@ def stop():
     if not path.exists():
         print('No managed services.')
         return
-    state=json.loads(path.read_text())
+    state=json.loads(path.read_text(encoding='utf-8-sig'))
+    errors=[]
     # Verify executable command line before terminating a saved PID (PID reuse safety).
     for name in ['frontend','backend','neo4j']:
         pid=state.get(name)
         if not pid:
             continue
-        ps=f'(Get-CimInstance Win32_Process -Filter "ProcessId = {int(pid)}").CommandLine'
-        r=subprocess.run(['powershell','-NoProfile','-Command',ps],capture_output=True,text=True,creationflags=FLAGS)
+        ps='[Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false); '+f'(Get-CimInstance Win32_Process -Filter "ProcessId = {int(pid)}" -ErrorAction Stop).CommandLine'
+        r=subprocess.run(['powershell','-NoProfile','-Command',ps],capture_output=True,
+                         encoding='utf-8',errors='replace',creationflags=FLAGS)
+        if r.returncode:
+            errors.append(f'Cannot verify {name} PID {pid}; it was not stopped.')
+            continue
         line=r.stdout.lower()
         if str(ROOT).lower() in line:
-            subprocess.run(['taskkill','/PID',str(pid),'/T','/F'],capture_output=True,creationflags=FLAGS)
+            result=subprocess.run(['taskkill','/PID',str(pid),'/T','/F'],capture_output=True,creationflags=FLAGS)
+            if result.returncode:
+                errors.append(f'Cannot stop {name} PID {pid}; process record retained.')
+                continue
             print('Stopped',name)
-    path.write_text('{}',encoding='utf-8')
+        state.pop(name,None)
+    path.write_text(json.dumps(state),encoding='utf-8')
+    if errors:
+        raise RuntimeError(' '.join(errors))
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser()

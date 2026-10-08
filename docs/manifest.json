@@ -236,8 +236,8 @@
     "sha256": "aeb600a4f6d98f4e5567134cf1923b27c237a51aa380c8c5e82ca23e3dc16eed"
   },
   "scripts/manage.py": {
-    "bytes": 7267,
-    "sha256": "b8fa6b575fb8d8978fef67a552c6d55a863cb2b7478bd87fe2c24d5fdd05fa3b"
+    "bytes": 8466,
+    "sha256": "fbf5d8a031865317402b0008abb7d37d5a09a2a3af50ba5dde87be53f685c86f"
   },
   "scripts/package_project.py": {
     "bytes": 1867,
