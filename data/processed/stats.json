@@ -1,6 +1,8 @@
 {
   "rawTagRows": 3683,
   "duplicateTagRows": 109,
+  "rawRatingRows": 100836,
+  "rawLinkRows": 9742,
   "movies": 9742,
   "genres": 19,
   "tags": 1475,
@@ -10,7 +12,20 @@
   "noGenres": 34,
   "missingYears": 13,
   "duplicateTitleGroups": 5,
-  "dataset": "cdd51de8901eab3da389",
+  "users": 610,
+  "ratingRelations": 100836,
+  "ratedMovies": 9724,
+  "imdbMovies": 9742,
+  "tmdbMovies": 9734,
+  "schemaVersion": 2,
+  "dataset": "1bcbd91a64fd90c3699b",
   "source": "https://files.grouplens.org/datasets/movielens/ml-latest-small.zip",
+  "sourceSHA256": {
+    "movies.csv": "5a5f32dd9bb3797b8e728a1b98958789d2b13f294a69fdfbc5727f8a9611aa07",
+    "tags.csv": "92a9f8bb7916dceef6151209845788c3643f794dfa79d1feaec7121b5960399d",
+    "ratings.csv": "aa289ca83157595d0df6aea1be6a4ded676ddc4385472e8313a8ed9805352646",
+    "links.csv": "97ad18e4e56a09363c65676b6cb3482ce3e2cea2372a24620c1599c843325f31",
+    "README.txt": "63d22ac138e80fae37021797ed8e1b9424b5239dc576a137422adf783ae3f404"
+  },
   "archiveSHA256": "696d65a3dfceac7c45750ad32df2c259311949efec81f0f144fdfb91ebc9e436"
 }

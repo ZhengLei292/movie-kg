@@ -1,0 +1,14 @@
+{
+  "slides": 20,
+  "integrityStatus": "pass",
+  "integrityFindings": 0,
+  "layoutFindings": 0,
+  "layoutWarnings": 44,
+  "warningReview": "Retained template decoration intentionally crosses slide boundaries; all 20 slides rendered and visually reviewed.",
+  "reimport": "PASS",
+  "nativeTableSlides": [
+    4,
+    8
+  ],
+  "powerPointNativeAppInspected": false
+}

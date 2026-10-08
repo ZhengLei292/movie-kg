@@ -1,0 +1,488 @@
+{
+  "stats": {
+    "movies": 9742,
+    "taggedMovies": 1572,
+    "noGenreMovies": 34,
+    "genres": 19,
+    "tags": 1475,
+    "featureRelations": 25624,
+    "users": 610,
+    "ratingRelations": 100836,
+    "relations": 126460,
+    "businessNodes": 11846,
+    "externalLinks": {
+      "imdbMovies": 9742,
+      "tmdbMovies": 9734
+    },
+    "genreDistribution": [
+      {
+        "name": "Drama",
+        "count": 4361
+      },
+      {
+        "name": "Comedy",
+        "count": 3756
+      },
+      {
+        "name": "Thriller",
+        "count": 1894
+      },
+      {
+        "name": "Action",
+        "count": 1828
+      },
+      {
+        "name": "Romance",
+        "count": 1596
+      },
+      {
+        "name": "Adventure",
+        "count": 1263
+      },
+      {
+        "name": "Crime",
+        "count": 1199
+      },
+      {
+        "name": "Sci-Fi",
+        "count": 980
+      },
+      {
+        "name": "Horror",
+        "count": 978
+      },
+      {
+        "name": "Fantasy",
+        "count": 779
+      },
+      {
+        "name": "Children",
+        "count": 664
+      },
+      {
+        "name": "Animation",
+        "count": 611
+      },
+      {
+        "name": "Mystery",
+        "count": 573
+      },
+      {
+        "name": "Documentary",
+        "count": 440
+      },
+      {
+        "name": "War",
+        "count": 382
+      },
+      {
+        "name": "Musical",
+        "count": 334
+      },
+      {
+        "name": "Western",
+        "count": 167
+      },
+      {
+        "name": "IMAX",
+        "count": 158
+      },
+      {
+        "name": "Film-Noir",
+        "count": 87
+      }
+    ],
+    "dataset": "1bcbd91a64fd90c3699b",
+    "source": "MovieLens Latest Small / GroupLens"
+  },
+  "movie1": {
+    "movieId": 1,
+    "title": "Toy Story (1995)",
+    "year": 1995,
+    "imdbId": 114709,
+    "tmdbId": 862,
+    "ratingCount": 215,
+    "averageRating": 3.9209302325581397,
+    "genres": [
+      "Adventure",
+      "Animation",
+      "Children",
+      "Comedy",
+      "Fantasy"
+    ],
+    "tags": [
+      "fun",
+      "pixar"
+    ],
+    "imdbUrl": "https://www.imdb.com/title/tt0114709/",
+    "tmdbUrl": "https://www.themoviedb.org/movie/862"
+  },
+  "user1Recommendations": [
+    {
+      "movieId": 318,
+      "title": "Shawshank Redemption, The (1994)",
+      "supportingUsers": 274,
+      "peerAverageRating": 4.647810218978101,
+      "exampleUsers": [
+        599,
+        588,
+        580,
+        573,
+        577
+      ]
+    },
+    {
+      "movieId": 858,
+      "title": "Godfather, The (1972)",
+      "supportingUsers": 157,
+      "peerAverageRating": 4.636942675159231,
+      "exampleUsers": [
+        610,
+        603,
+        599,
+        580,
+        573
+      ]
+    },
+    {
+      "movieId": 589,
+      "title": "Terminator 2: Judgment Day (1991)",
+      "supportingUsers": 150,
+      "peerAverageRating": 4.490000000000001,
+      "exampleUsers": [
+        610,
+        599,
+        580,
+        573,
+        561
+      ]
+    },
+    {
+      "movieId": 4993,
+      "title": "Lord of the Rings: The Fellowship of the Ring, The (2001)",
+      "supportingUsers": 144,
+      "peerAverageRating": 4.559027777777779,
+      "exampleUsers": [
+        610,
+        599,
+        580,
+        573,
+        561
+      ]
+    },
+    {
+      "movieId": 7153,
+      "title": "Lord of the Rings: The Return of the King, The (2003)",
+      "supportingUsers": 138,
+      "peerAverageRating": 4.507246376811594,
+      "exampleUsers": [
+        610,
+        580,
+        573,
+        561,
+        480
+      ]
+    }
+  ],
+  "graph1": {
+    "nodes": [
+      {
+        "id": "m:1",
+        "label": "Toy Story (1995)",
+        "kind": "center",
+        "movieId": 1
+      },
+      {
+        "id": "genre:Adventure",
+        "label": "Adventure",
+        "kind": "genre"
+      },
+      {
+        "id": "genre:Animation",
+        "label": "Animation",
+        "kind": "genre"
+      },
+      {
+        "id": "genre:Children",
+        "label": "Children",
+        "kind": "genre"
+      },
+      {
+        "id": "genre:Comedy",
+        "label": "Comedy",
+        "kind": "genre"
+      },
+      {
+        "id": "genre:Fantasy",
+        "label": "Fantasy",
+        "kind": "genre"
+      },
+      {
+        "id": "tag:fun",
+        "label": "fun",
+        "kind": "tag"
+      },
+      {
+        "id": "tag:pixar",
+        "label": "pixar",
+        "kind": "tag"
+      },
+      {
+        "id": "m:3114",
+        "label": "Toy Story 2 (1999)",
+        "kind": "movie",
+        "movieId": 3114
+      },
+      {
+        "id": "u:31",
+        "label": "用户 31",
+        "kind": "user",
+        "userId": 31
+      },
+      {
+        "id": "u:40",
+        "label": "用户 40",
+        "kind": "user",
+        "userId": 40
+      },
+      {
+        "id": "u:43",
+        "label": "用户 43",
+        "kind": "user",
+        "userId": 43
+      }
+    ],
+    "edges": [
+      {
+        "source": "m:1",
+        "target": "genre:Adventure",
+        "relation": "IN_GENRE"
+      },
+      {
+        "source": "m:1",
+        "target": "genre:Animation",
+        "relation": "IN_GENRE"
+      },
+      {
+        "source": "m:1",
+        "target": "genre:Children",
+        "relation": "IN_GENRE"
+      },
+      {
+        "source": "m:1",
+        "target": "genre:Comedy",
+        "relation": "IN_GENRE"
+      },
+      {
+        "source": "m:1",
+        "target": "genre:Fantasy",
+        "relation": "IN_GENRE"
+      },
+      {
+        "source": "m:1",
+        "target": "tag:fun",
+        "relation": "HAS_TAG"
+      },
+      {
+        "source": "m:1",
+        "target": "tag:pixar",
+        "relation": "HAS_TAG"
+      },
+      {
+        "source": "m:3114",
+        "target": "genre:Adventure",
+        "relation": "IN_GENRE"
+      },
+      {
+        "source": "m:3114",
+        "target": "genre:Animation",
+        "relation": "IN_GENRE"
+      },
+      {
+        "source": "m:3114",
+        "target": "genre:Children",
+        "relation": "IN_GENRE"
+      },
+      {
+        "source": "m:3114",
+        "target": "genre:Comedy",
+        "relation": "IN_GENRE"
+      },
+      {
+        "source": "m:3114",
+        "target": "genre:Fantasy",
+        "relation": "IN_GENRE"
+      },
+      {
+        "source": "m:3114",
+        "target": "tag:pixar",
+        "relation": "HAS_TAG"
+      },
+      {
+        "source": "u:31",
+        "target": "m:1",
+        "relation": "RATED",
+        "rating": 5.0,
+        "timestamp": 850466616
+      },
+      {
+        "source": "u:40",
+        "target": "m:1",
+        "relation": "RATED",
+        "rating": 5.0,
+        "timestamp": 832058959
+      },
+      {
+        "source": "u:43",
+        "target": "m:1",
+        "relation": "RATED",
+        "rating": 5.0,
+        "timestamp": 848993983
+      }
+    ],
+    "hiddenTags": 0,
+    "movieId": 1
+  },
+  "ratingDistribution1": {
+    "distribution": [
+      {
+        "rating": 0.5,
+        "count": 1
+      },
+      {
+        "rating": 1.5,
+        "count": 1
+      },
+      {
+        "rating": 2.0,
+        "count": 6
+      },
+      {
+        "rating": 2.5,
+        "count": 8
+      },
+      {
+        "rating": 3.0,
+        "count": 34
+      },
+      {
+        "rating": 3.5,
+        "count": 18
+      },
+      {
+        "rating": 4.0,
+        "count": 82
+      },
+      {
+        "rating": 4.5,
+        "count": 18
+      },
+      {
+        "rating": 5.0,
+        "count": 47
+      }
+    ],
+    "items": [
+      {
+        "userId": 596,
+        "rating": 4.0,
+        "datetimeUTC": "2018-08-31T10:01:06+00:00"
+      },
+      {
+        "userId": 514,
+        "rating": 4.0,
+        "datetimeUTC": "2018-08-10T03:40:00+00:00"
+      },
+      {
+        "userId": 98,
+        "rating": 4.5,
+        "datetimeUTC": "2018-07-24T18:44:09+00:00"
+      },
+      {
+        "userId": 153,
+        "rating": 2.0,
+        "datetimeUTC": "2018-05-05T19:30:42+00:00"
+      },
+      {
+        "userId": 567,
+        "rating": 3.5,
+        "datetimeUTC": "2018-05-02T18:33:21+00:00"
+      },
+      {
+        "userId": 233,
+        "rating": 3.0,
+        "datetimeUTC": "2018-04-26T22:20:49+00:00"
+      },
+      {
+        "userId": 601,
+        "rating": 4.0,
+        "datetimeUTC": "2018-03-19T13:56:41+00:00"
+      },
+      {
+        "userId": 89,
+        "rating": 3.0,
+        "datetimeUTC": "2018-03-07T07:38:34+00:00"
+      },
+      {
+        "userId": 382,
+        "rating": 4.5,
+        "datetimeUTC": "2018-01-05T14:30:28+00:00"
+      },
+      {
+        "userId": 50,
+        "rating": 3.0,
+        "datetimeUTC": "2017-12-25T21:41:56+00:00"
+      },
+      {
+        "userId": 141,
+        "rating": 4.0,
+        "datetimeUTC": "2017-12-13T02:04:03+00:00"
+      },
+      {
+        "userId": 15,
+        "rating": 2.5,
+        "datetimeUTC": "2017-11-13T12:59:30+00:00"
+      },
+      {
+        "userId": 401,
+        "rating": 3.5,
+        "datetimeUTC": "2017-11-12T01:35:50+00:00"
+      },
+      {
+        "userId": 159,
+        "rating": 4.5,
+        "datetimeUTC": "2017-10-22T02:42:52+00:00"
+      },
+      {
+        "userId": 279,
+        "rating": 3.0,
+        "datetimeUTC": "2017-09-26T02:54:55+00:00"
+      },
+      {
+        "userId": 443,
+        "rating": 4.0,
+        "datetimeUTC": "2017-08-03T01:08:02+00:00"
+      },
+      {
+        "userId": 599,
+        "rating": 3.0,
+        "datetimeUTC": "2017-06-27T00:43:24+00:00"
+      },
+      {
+        "userId": 252,
+        "rating": 4.5,
+        "datetimeUTC": "2017-06-24T06:15:04+00:00"
+      },
+      {
+        "userId": 471,
+        "rating": 5.0,
+        "datetimeUTC": "2017-06-05T14:10:20+00:00"
+      },
+      {
+        "userId": 328,
+        "rating": 5.0,
+        "datetimeUTC": "2017-05-08T02:31:05+00:00"
+      }
+    ]
+  }
+}

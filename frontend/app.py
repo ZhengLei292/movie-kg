@@ -103,9 +103,9 @@ with st.sidebar:
 stats = api('/api/stats')
 st.markdown('<div class="eyebrow">CONNECTED STORIES / 电影关系探索</div>',unsafe_allow_html=True)
 st.title('每一次推荐，都有迹可循。')
-st.markdown('<div class="hero-note">从一部电影出发，沿着类型和标签发现相似作品。点击图谱节点，继续探索电影之间的联系。</div>',unsafe_allow_html=True)
-cols=st.columns(4)
-for col,key,label in zip(cols,['movies','genres','tags','relations'],['电影实体','类型','独立标签','图谱关系']):
+st.markdown('<div class="hero-note">探索电影的类型、标签和用户评分，查看推荐理由与外部电影资料。</div>',unsafe_allow_html=True)
+cols=st.columns(6)
+for col,key,label in zip(cols,['movies','genres','tags','users','ratingRelations','relations'],['电影实体','类型','独立标签','匿名用户','评分关系','全部关系']):
     col.metric(label,f'{stats[key]:,}')
 
 # Distinguish a missing deep-link from a database outage.
@@ -121,21 +121,27 @@ with main:
     chips(movie['genres'])
     if not movie['genres']:
         st.caption('数据集中未列出类型')
-    tab1,tab2,tab3=st.tabs(['关系图谱','电影标签','数据概览'])
+    tab1,tab2,tab3,tab4,tab5=st.tabs(['关系图谱','电影标签','数据概览','评分与链接','用户推荐'])
     with tab1:
-        st.markdown('<div class="legend">● 深绿：当前电影　● 蓝：关联电影　● 绿：类型　● 金：标签</div>',unsafe_allow_html=True)
+        st.markdown('<div class="legend">● 深绿：当前电影　● 蓝：关联电影　● 绿：类型　● 金：标签　● 紫：评分用户</div>',unsafe_allow_html=True)
         limit=st.slider('关联电影数量',0,12,6)
-        graph=api(f'/api/movies/{movie["movieId"]}/graph',limit=limit)
+        user_limit=st.slider('展示评分用户数量',0,5,3)
+        graph=api(f'/api/movies/{movie["movieId"]}/graph',limit=limit,user_limit=user_limit)
         event=graph_component(graph=graph,key=f'graph-{movie["movieId"]}',default=None)
         if event and event.get('nonce') != st.session_state.get('_graph_event'):
             st.session_state._graph_event=event['nonce']
             if event['kind'] in ['movie','center']:
                 choose(event['movieId'])
                 st.rerun()
+            elif event['kind']=='user':
+                st.session_state.focused_user=event['userId']
+                st.session_state.user_revision=st.session_state.get('user_revision',0)+1
+                st.rerun()
             else:
                 st.session_state.feature=(event['kind'],event['label'])
                 st.session_state.feature_page=0
         st.caption('点击节点查看关联电影；拖动节点调整布局。滚轮缩放，双击空白处复位。')
+        st.caption('点击紫色用户后，在“用户推荐”页查看该用户的评分与推荐。评分用户按本片评分降序取样。')
         if graph['hiddenTags']:
             st.caption(f'为保持可读性，图谱省略 {graph["hiddenTags"]} 个标签；全部标签在“电影标签”中。')
         with st.expander('按类型或标签查看关联电影（键盘可用）'):
@@ -172,7 +178,62 @@ with main:
         st.bar_chart(pd.DataFrame(stats['genreDistribution']).set_index('name'),horizontal=True,color='#217561')
         st.caption(f'{stats["taggedMovies"]:,} 部电影有标签；{stats["movies"]-stats["taggedMovies"]:,} 部没有标签。电影可同时属于多个类型。')
         st.markdown('[数据来源与使用条件](https://grouplens.org/datasets/movielens/latest/)')
-        st.caption('本系统不使用评分、演员、导演、剧情简介或用户画像。')
+        st.caption(f'{stats["users"]:,} 个匿名用户，{stats["ratingRelations"]:,} 条评分关系。外部标识以电影属性保存，不额外计入节点或边。')
+        st.caption('IMDb和TMDb编号来自links.csv；尚未抓取演员、导演或剧情数据。')
+    with tab4:
+        st.subheader('这部电影的用户评分')
+        a,b=st.columns(2)
+        a.metric('平均评分',f'{movie["averageRating"]:.2f} / 5' if movie['averageRating'] is not None else '暂无评分')
+        b.metric('评分人数',movie['ratingCount'])
+        rated=api(f'/api/movies/{movie["movieId"]}/ratings')
+        if rated['distribution']:
+            st.bar_chart(pd.DataFrame(rated['distribution']).set_index('rating'),color='#217561')
+            with st.expander('最近20条评分记录（UTC时间）'):
+                st.dataframe(pd.DataFrame(rated['items']),hide_index=True,use_container_width=True)
+        else:
+            st.info('这部电影在评分表中没有记录。')
+        st.subheader('外部电影资料')
+        if movie['imdbUrl']:
+            st.link_button(f'IMDb · tt{movie["imdbId"]:07d}',movie['imdbUrl'])
+        if movie['tmdbUrl']:
+            st.link_button(f'TMDb · {movie["tmdbId"]}',movie['tmdbUrl'])
+        if not movie['imdbUrl'] and not movie['tmdbUrl']:
+            st.info('这部电影没有可用的外部编号。')
+        st.caption('打开外部网站需要联网；系统自身的查询和推荐可在本机离线运行。均分来自此数据集，不代表外部网站评分。')
+    with tab5:
+        st.subheader('匿名用户的历史与推荐')
+        users=api('/api/users')['items']
+        user_map={u['userId']:u for u in users}
+        if users:
+            user_ids=list(user_map)
+            focus=st.session_state.get('focused_user',user_ids[0])
+            uid=st.selectbox('选择数据集用户',user_ids,index=user_ids.index(focus) if focus in user_map else 0,
+                key=f'user_selector-{st.session_state.get("user_revision",0)}',
+                format_func=lambda x:f'用户 {x} · {user_map[x]["ratingCount"]} 条评分')
+            if st.session_state.get('_last_user')!=uid:
+                st.session_state.user_page=0
+                st.session_state._last_user=uid
+            up=st.session_state.get('user_page',0)
+            history=api(f'/api/users/{uid}',offset=up*20,limit=20)
+            st.caption(f'匿名来源编号，不对应登录用户。共 {history["total"]} 条评分，历史平均 {user_map[uid]["averageRating"]:.2f} 分。')
+            st.dataframe(pd.DataFrame(history['items']),hide_index=True,use_container_width=True)
+            a,b=st.columns(2)
+            if a.button('评分上一页',disabled=up==0):
+                st.session_state.user_page=up-1;st.rerun()
+            if b.button('评分下一页',disabled=(up+1)*20>=history['total']):
+                st.session_state.user_page=up+1;st.rerun()
+            personal=api(f'/api/users/{uid}/recommendations')
+            st.markdown('**基于共同高分电影的推荐**')
+            st.caption(personal['rule'])
+            if not personal['items']:
+                st.info('没有满足共同高分与未评分条件的候选电影。')
+            for rec in personal['items']:
+                st.markdown(f'**{rec["title"]}**')
+                st.caption(f'{rec["supportingUsers"]} 个邻居用户给出至少4分，邻居均分 {rec["peerAverageRating"]:.2f}；示例用户：'+', '.join(map(str,rec['exampleUsers'])))
+                st.button('查看这部推荐电影',key=f'user-rec-{rec["movieId"]}',on_click=choose,args=(rec['movieId'],))
+            st.caption('已排除该用户评分过的电影。这是基于历史共同关系的推荐基线，尚未进行推荐效果评价。')
+        else:
+            st.info('当前评分数据没有有效用户。')
 with right:
     st.subheader('相似电影')
     st.caption('共同类型 + 共同标签 · 最多 5 部')

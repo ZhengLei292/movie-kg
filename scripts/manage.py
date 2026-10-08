@@ -125,19 +125,20 @@ def run_script(name):
 
 def start(rebuild=False,no_browser=False):
     start_database()
+    # Recompute from retained CSVs so changed ratings/links also trigger migration.
+    run_script('prepare_data.py')
+    expected=json.loads((ROOT/'data/processed/stats.json').read_text(encoding='utf-8'))['dataset']
     sys.path.insert(0,str(ROOT))
     from backend.graph import GraphStore
     store=GraphStore()
     try:
         try:
-            store.dataset()
-            ready=True
+            ready=store.dataset()==expected
         except RuntimeError:
             ready=False
     finally:
         store.close()
     if rebuild or not ready:
-        run_script('prepare_data.py')
         run_script('import_graph.py')
     if not open_port(18080):
         p=spawn('backend',[sys.executable,'-m','uvicorn','backend.app:app','--host','127.0.0.1','--port','18080'])
@@ -182,4 +183,3 @@ if __name__=='__main__':
     except Exception as exc:
         print(f'ERROR: {exc}',file=sys.stderr)
         sys.exit(1)
-

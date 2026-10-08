@@ -5,7 +5,7 @@ import zipfile
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
-EXCLUDED={'.venv','runtime','logs','.build','__pycache__','.git'}
+EXCLUDED={'.venv','runtime','logs','.build','__pycache__','.git','historical'}
 
 def package():
     files=[]
@@ -15,7 +15,7 @@ def package():
         if not p.is_file() or p.suffix in {'.zip','.pyc'} and rel.parts[0]!='data': continue
         if p.name=='manifest.json':continue
         if p.suffix=='.html' and rel.parts[0]=='docs':continue
-        if p.name=='TransE-source-text.txt':continue
+        if p.name in {'TransE-source-text.txt','TransE-2013.pdf'}:continue
         files.append(p)
     manifest={str(p.relative_to(ROOT)).replace('\\','/'):{'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in sorted(files)}
     manifest_path=ROOT/'docs/manifest.json'
@@ -30,7 +30,7 @@ def package():
         assert bad is None,bad
         names=z.namelist()
         for required in ['start.bat','backend/app.py','frontend/app.py','data/raw/ml-latest-small.zip',
-                         'deliverables/项目汇报.pptx','deliverables/TransE论文分享.pptx','deliverables/系统演示.mp4']:
+                         'deliverables/项目汇报.pptx','data/raw/ratings.csv','data/raw/links.csv','docs/项目报告.md']:
             assert 'MovieGraph/'+required in names,required
     print(f'{archive}\nFiles: {len(files)}\nSize: {archive.stat().st_size:,} bytes\nZIP CRC check: PASS')
 

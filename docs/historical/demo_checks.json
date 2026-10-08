@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "checks": [
+    "graph_genre_click",
+    "graph_tag_click",
+    "graph_movie_click",
+    "duplicate_title_selected_by_id",
+    "no_tags_ui",
+    "no_features_ui",
+    "stats_ui"
+  ],
+  "video": "系统演示.mp4",
+  "audio": "无配音，含步骤字幕",
+  "capture": "真实浏览器连续操作"
+}
